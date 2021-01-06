@@ -1,0 +1,13 @@
+$azul:rgba(95, 43, 187, 1);
+$blanco:#ffffff;
+
+.header{
+    background-color: $azul;
+    height: 78px;
+    color:$blanco;
+    font-weight: bold;
+    .title{
+        padding: 1.5% 3%;
+     }
+    
+}

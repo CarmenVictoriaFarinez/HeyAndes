@@ -1,0 +1,21 @@
+<router-outlet></router-outlet>
+<section class="container">
+    <table class="tabla">
+        <thead>
+            <tr class="">
+                <th class="title-names"> Nombre de la Empresa </th>
+                <th class="title-finalPrices"> Total de Ventas </th>
+                <th class="title-commission"> Comisión </th>
+                <th class="title-details"> Detalles </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sale of sales">
+                <td>{{sale.nameAgency}}</td>
+                <td>{{sale.finalPrice}}</td>
+                <td>{{sale.finalPrice*0.025}}</td>
+                <td>Detalles</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
