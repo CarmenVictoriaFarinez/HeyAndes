@@ -1,15 +1,25 @@
-<table>
-    <tr *ngIf = "sale">
-        <h4>
-            Detalles de la Venta
-        </h4>
+<section class="container">
+    <h2>Detalles de la Venta</h2>
 
-        <td>{{sale.data.name}}</td>
-        <td>{{sale.data.day}}</td>
-        <td>{{sale.data.hour}}</td>
-        <td>{{sale.data.finalPrice}}</td>
-
-        <button type="submit" (click)="onVolver()">Volver</button>
-
-    </tr>
-</table>
+    <table class="tabla">
+        <thead>
+            <tr class="">
+                <th class="title-names"> Nombre de la Empresa </th>
+                <th class="title-finalPrices"> Persona </th>
+                <th class="title-commission"> Día </th>
+                <th class="title-details"> Hora </th>
+                <th class="title-details"> Valor venta </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf = "sale"> 
+                <td>{{sale.data.nameAgency}}</td>
+                <td>{{sale.data.name}}</td>
+                <td>{{sale.data.day}}</td>
+                <td>{{sale.data.hour}}</td>
+                <td>{{sale.data.finalPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" (click)="onVolver()">Volver</button>
+</section>
