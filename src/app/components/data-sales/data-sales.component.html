@@ -11,9 +11,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let sale of sales">
-                <td>{{sale.nameAgency}}</td>
-                <td>{{sale.finalPrice}}</td>
-                <td>{{sale.finalPrice*0.025}}</td>
+                <td>{{sale.data.nameAgency}}</td>
+                <td>{{sale.data.finalPrice}}</td>
+                <td>{{sale.data.finalPrice*0.025}}</td>
                 <td><button type="submit" (click)="agency(sale)">Detalles</button></td>
             </tr>
         </tbody>

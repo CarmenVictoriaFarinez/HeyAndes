@@ -10,6 +10,9 @@ import { DetailSalesComponent } from './components/detail-sales/detail-sales.com
 // view
 import { VistaEmpresasComponent } from './view/vista-empresas/vista-empresas.component';
 import { VistaDetalleComponent } from './view/vista-detalle/vista-detalle.component';
+// firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { VistaDetalleComponent } from './view/vista-detalle/vista-detalle.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
