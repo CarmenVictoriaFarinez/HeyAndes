@@ -14,8 +14,9 @@
                 <td>{{sale.nameAgency}}</td>
                 <td>{{sale.finalPrice}}</td>
                 <td>{{sale.finalPrice*0.025}}</td>
-                <td>Detalles</td>
+                <td><button type="submit" (click)="agency(sale)">Detalles</button></td>
             </tr>
         </tbody>
     </table>
+    <app-detail-sales [sale]="sale"></app-detail-sales>
 </section>

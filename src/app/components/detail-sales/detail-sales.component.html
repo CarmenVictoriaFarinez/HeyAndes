@@ -1,0 +1,15 @@
+<table>
+    <tr *ngIf = "sale">
+        <h4>
+            Detalles de la Venta
+        </h4>
+
+        <td>{{sale.name}}</td>
+        <td>{{sale.day}}</td>
+        <td>{{sale.hour}}</td>
+        <td>{{sale.finalPrice}}</td>
+
+        <button type="submit" (click)="onVolver()">Volver</button>
+
+    </tr>
+</table>
