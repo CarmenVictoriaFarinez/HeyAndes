@@ -25,16 +25,20 @@ export class DataSalesComponent implements OnInit {
         this.sales.push({
           id: saleData.payload.doc.id,
           data: saleData.payload.doc.data()
+          // nameAgency: saleData.payload.doc.data().nameAgency
         });
       });
     });
   }
 
 
-    agency(sale: any): void{
+    agency(sale: any, i: any): void{
       this.sale = sale;
-      console.log(sale);
-      // this.router.navigate(['agency']);
+      // this.router.navigate(['/empresas', i]);
+      console.log(i);
+      console.log(sale.data);
+      // console.log(sale.nameAgency);
+      // console.log(sale.data.nameAgency);
     }
 
 }

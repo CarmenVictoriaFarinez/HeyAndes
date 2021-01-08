@@ -1,5 +1,13 @@
-<router-outlet></router-outlet>
+
 <section class="container">
+    <article class="resultados">
+        <div class="empresa">
+            <h1>EMPRESA MAS VENTAS</h1>
+        </div>
+        <div class="mes">
+            <h1>EMPRESA MAS VENTAS</h1>
+        </div>
+    </article>
     <table class="tabla">
         <thead>
             <tr class="">
@@ -10,11 +18,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let sale of sales">
+            <tr *ngFor="let sale of sales, index as i ">
                 <td>{{sale.data.nameAgency}}</td>
                 <td>{{sale.data.finalPrice}}</td>
                 <td>{{sale.data.finalPrice*0.025}}</td>
-                <td><button type="submit" (click)="agency(sale)">Detalles</button></td>
+                <td><button type="submit" (click)="agency(sale, i)">Detalles</button></td>
             </tr>
         </tbody>
     </table>

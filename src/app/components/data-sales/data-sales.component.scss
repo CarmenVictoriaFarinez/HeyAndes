@@ -1,5 +1,6 @@
 .container{
-    margin-left: 15%;
+   
+    margin-left: 2%;
 }
 
 table, th, td{
@@ -17,5 +18,27 @@ td, th {
 
 .tabla{
     width: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
 
+}
+.resultados{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top:5%;
+}
+.empresa{
+   
+    width: 650px;
+    height: 160px;
+    background: #c4bdbd;
+    border-radius: 15px;
+}
+.mes{
+    
+    width: 650px;
+    height: 160px;
+    background: #c4bdbd;
+    border-radius: 15px;
 }

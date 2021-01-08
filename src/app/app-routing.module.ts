@@ -8,13 +8,8 @@ import { VistaDetalleComponent } from './view/vista-detalle/vista-detalle.compon
 const routes: Routes = [
 
   { path: '', redirectTo: '', pathMatch: 'full'},
-  // { path: 'agency',  component: VistaDetalleComponent},
-
-  { path: 'empresas', component: VistaEmpresasComponent,
-      children: [
-      { path: ':nameAgency', component: VistaDetalleComponent}
-    ]
-  }
+  { path: 'empresas', component: VistaEmpresasComponent},
+  { path: 'empresas/:id',  component: VistaDetalleComponent}
 ];
 
 @NgModule({
