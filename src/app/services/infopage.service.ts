@@ -10,17 +10,18 @@ export class InfopageService {
 
   constructor( private firestore: AngularFirestore ) {
   }
-  one(id: any){
-    return this.firestore.collection('sales').doc(id).snapshotChanges();
-  }
 
   // Obtiene un elemento de la bd
-  public getElement(nameAgency: string) {
+  public getElement(nameAgency: string):Observable<any> {
     return this.firestore.collection('sales').doc(nameAgency).snapshotChanges();
   }
   // Obtiene todos los gatos
   public getJson() {
     return this.firestore.collection('sales').snapshotChanges();
   }
+
+  /*one(id: any){
+    return this.firestore.collection('sales').doc(id).snapshotChanges();
+  }*/
 
 }

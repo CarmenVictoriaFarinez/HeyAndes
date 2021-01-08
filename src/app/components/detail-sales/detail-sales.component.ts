@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute} from '@angular/router';
 import { InfopageService } from 'src/app/services/infopage.service';
+import { saleInterface } from '../data-sales/data-sales.component';
+
 
 @Component({
   selector: 'app-detail-sales',
@@ -10,43 +12,24 @@ import { InfopageService } from 'src/app/services/infopage.service';
 export class DetailSalesComponent implements OnInit {
   @Input() sale: any = null;
 
-  @Output() volver = new EventEmitter();
+  
+  arrayData:Array<saleInterface> = [];
 
   constructor(private infoPageService: InfopageService,
               private router: Router,
               private ruta: ActivatedRoute) {
 
-          /*this.ruta.params.subscribe(params => {
-          console.log(params['id']);
+          (this.ruta.snapshot.paramMap.get('id'));
 
-          this.sale = this.infoPageService.getElement(params['id'])
-          // .subscribe(val => console.log(val));
-          console.log(this.sale);
-
-          });*/
     }
 
   ngOnInit(): void {
-    /*this.sale = {
-      agency : this.ruta.snapshot.params.sale.nameAgency
-    };
-    console.log(this.sale);
+    const agency = this.ruta.snapshot.paramMap.get('id');
+    console.log(agency);
 
-    this.ruta.params.subscribe(
-      (params: Params) => {
-        this.sale.agency = params.agency;
-        console.log(params.agency);
-
-      }
-    );*/
+    this.arrayData = JSON.parse(localStorage.getItem('details'));
+    console.log(this.arrayData);
 
   }
-
-
-  onVolver(): void{
-    this.volver.emit();
-    this.router.navigate(['/empresas']);
-  }
-
 
 }

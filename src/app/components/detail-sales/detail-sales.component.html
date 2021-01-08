@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container-detail">
     <h2>Detalles de la Venta</h2>
 
     <table class="tabla">
@@ -12,14 +12,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngIf = "sale"> 
-                <td>{{sale.data.nameAgency}}</td>
-                <td>{{sale.data.name}}</td>
-                <td>{{sale.data.day}}</td>
-                <td>{{sale.data.hour}}</td>
-                <td>{{sale.data.finalPrice}}</td>
+            <tr *ngFor = "let sale of arrayData"> 
+                <td>{{sale.name}}</td>
+                <td>{{sale.people}}</td>
+                <td>{{sale.day}}</td>
+                <td>{{sale.hour}}</td>
+                <td>{{sale.sales}}</td>
             </tr>
         </tbody>
     </table>
-    <button type="submit" (click)="onVolver()">Volver</button>
 </section>
