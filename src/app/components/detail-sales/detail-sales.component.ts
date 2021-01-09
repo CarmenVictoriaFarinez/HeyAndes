@@ -11,9 +11,9 @@ import { saleInterface } from '../data-sales/data-sales.component';
 })
 export class DetailSalesComponent implements OnInit {
   @Input() sale: any = null;
-
-  
-  arrayData:Array<saleInterface> = [];
+  arrayData: Array <saleInterface> = [];
+  total: number | undefined;
+ 
 
   constructor(private infoPageService: InfopageService,
               private router: Router,
@@ -30,6 +30,10 @@ export class DetailSalesComponent implements OnInit {
     this.arrayData = JSON.parse(localStorage.getItem('details'));
     console.log(this.arrayData);
 
-  }
 
+  // Calculamos el TOTAL
+    this.total = this.arrayData.reduce((sum, current) => sum + (current.sales), 0);
+    console.log('Total: ', this.total);
+
+  }
 }

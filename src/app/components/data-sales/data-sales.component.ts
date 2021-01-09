@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InfopageService } from 'src/app/services/infopage.service';
 import { Router } from '@angular/router';
+import UniqueI from 'src/app/interface/unique';
+
 
 export interface saleInterface{
         name: string;
@@ -18,6 +20,8 @@ export interface saleInterface{
 export class DataSalesComponent implements OnInit {
   sales: any = [];
   sale = null;
+  arrayUnique = [];
+  nameAgency: string = "";
 
   constructor(private infoPageService: InfopageService,
               private router: Router ) {}
@@ -27,15 +31,17 @@ export class DataSalesComponent implements OnInit {
   ngOnInit(): void {
     this.infoPageService.getJson().subscribe((salesSnapshot) => {
       this.sales = [];
-     // console.log(salesSnapshot);
       salesSnapshot.forEach((saleData: any) => {
         this.sales.push({
           id: saleData.payload.doc.id,
-          data: saleData.payload.doc.data()
-          // nameAgency: saleData.payload.doc.data().nameAgency
+          data: saleData.payload.doc.data(),
+          nameA: saleData.payload.doc.data().nameAgency
         });
       });
     });
+
+
+
   }
 
 
@@ -47,9 +53,9 @@ export class DataSalesComponent implements OnInit {
         hour: '',
         sales: 0
       };
-      let arrayData:Array<saleInterface> = [];
-      this.sales.forEach((element:any) => {
-        if(element.data.nameAgency === name){
+      const arrayData: Array <saleInterface> = [];
+      this.sales.forEach((element: any ) => {
+        if ( element.data.nameAgency === name){
           obj = {
           name: element.data.nameAgency,
           people: element.data.name,
@@ -60,9 +66,13 @@ export class DataSalesComponent implements OnInit {
           arrayData.push(obj);
         }
       });
-      localStorage.setItem("details",JSON.stringify(arrayData));
+      localStorage.setItem("details", JSON.stringify(arrayData));
       console.log(arrayData);
       this.router.navigate(['/empresas', name]);
     }
+
+
+ 
+
 
 }
