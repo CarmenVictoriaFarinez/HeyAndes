@@ -1,6 +1,11 @@
 $azul:rgba(95, 43, 187, 1);
 $blanco:#ffffff;
 
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
 .header{
     background-color: $azul;
     height: 78px;
@@ -8,6 +13,23 @@ $blanco:#ffffff;
     font-weight: bold;
     .title{
         padding: 1.5% 3%;
+        margin: 0px;
      }
     
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .header{
+        width: 100%;
+    }
+
+    .title{
+        padding: 1.5% 3%;
+        margin: 0px;
+     }
 }
