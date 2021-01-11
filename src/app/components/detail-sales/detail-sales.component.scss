@@ -1,3 +1,6 @@
+$azul:rgb(150, 133, 180);
+$blanco:#ffffff;
+
 .container-detail{
     margin-left: 15%;
     
@@ -15,6 +18,9 @@ td, th {
     padding: 15px;
     text-align: center;
 }
+th{
+    background: #DBD9D9;
+ }
 
 .tabla{
     width: 80%;
@@ -23,6 +29,14 @@ td, th {
 .total{
     margin-left: 65%;
     
+}
+
+.button-listado{ 
+    color: white;
+    font-family: 'Rubik One', sans-serif;
+    text-decoration: none;
+    background-color:$azul;
+
 }
 
 

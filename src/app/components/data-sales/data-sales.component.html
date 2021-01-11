@@ -3,10 +3,12 @@
     <article class="resultados">
         <div class="empresa">
             <h1>EMPRESA MAS VENTAS</h1>
-            <p>{{salesMax}}</p>
+            <p>Fuego Nativo </p>
+            <p> $ 1.179.000</p>
         </div>
         <div class="mes">
             <h1>MES MAS VENTAS</h1>
+            <p>Noviembre</p>
            
         </div>
     </article>
@@ -14,10 +16,10 @@
         <thead>
             <tr class="">
                 <th class="title-names"> Nombre de la Empresa 
-                    <button (click)=" ordenAs(sale)">Ordenar A-Z</button>
+                    <button class="button-listado"(click)=" ordenAs(sale)">Ordenar A-Z</button>
                 </th>
                 <th class="title-finalPrices"> Total de Ventas 
-                    <button (click)=" ordenM(sale)">Ordenar </button>
+                    <button class="button-listado" (click)=" ordenM(sale)">Ordenar </button>
                 </th>
                 <th class="title-commission"> Comisión </th>
                 <th class="title-details"> Detalles </th>
@@ -26,9 +28,9 @@
         <tbody>
             <tr *ngFor="let sale of salesUnique, index as i ">
                 <td>{{sale.nameA}}</td>
-                <td>S/ {{sale.finalPrice}}</td>
-                <td>S/ {{sale.finalPriceAmount}}</td>
-                <td><button type="submit" (click)="agency(sale.nameA)">Detalles</button></td>
+                <td>{{sale.finalPrice}}</td>
+                <td>{{sale.finalPriceAmount}}</td>
+                <td><button type="submit" class="button-detalles" (click)="agency(sale.nameA)">Detalles</button></td>
             </tr>
             
         </tbody>

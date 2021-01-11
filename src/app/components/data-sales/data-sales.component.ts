@@ -85,7 +85,7 @@ export class DataSalesComponent implements OnInit {
       this.router.navigate(['/empresas', name]);
     }
 
-    ordenAs (sale: any) {
+    ordenAs(sale: any): void {
       const ascendente = this.salesUnique.sort((prev: any, next: any) => {
         if (prev.nameA > next.nameA) {
           return 1;
@@ -95,13 +95,13 @@ export class DataSalesComponent implements OnInit {
     }
 
 
-    ordenM (sale: any) {
-      const ascendente = this.salesUnique.sort((prev: any, next: any) => {
+    ordenM(sale: any): void {
+      const mayor = this.salesUnique.sort((prev: any, next: any) => {
         if (prev.finalPriceAmount < next.finalPriceAmount) {
           return 1;
         } return -1;
       });
-      return ascendente;
+      return mayor;
     }
 
 }

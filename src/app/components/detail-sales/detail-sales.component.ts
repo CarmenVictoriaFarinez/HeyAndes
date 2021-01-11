@@ -38,11 +38,11 @@ export class DetailSalesComponent implements OnInit {
 
   }
   ordenM () {
-    const ascendente = this.arrayData.sort((prev: any, next: any) => {
+    const mayor = this.arrayData.sort((prev: any, next: any) => {
       if (prev.sales < next.sales) {
         return 1;
       } return -1;
     });
-    return ascendente;
+    return mayor;
   }
 }

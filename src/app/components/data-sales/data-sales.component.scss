@@ -1,3 +1,6 @@
+$azul:rgb(150, 133, 180);
+$blanco:#ffffff;
+
 .container{
    
     margin-left: 2%;
@@ -14,6 +17,14 @@ table, th, td{
 td, th {
     padding: 15px;
     text-align: center;
+}
+th{
+   background: #DBD9D9;
+}
+
+h1, p {
+    text-align: center;
+    font-size: 1.77vw;
 }
 
 .tabla{
@@ -41,4 +52,28 @@ td, th {
     height: 160px;
     background: #c4bdbd;
     border-radius: 15px;
+}
+
+.button-listado{ 
+    color: white;
+    font-family: 'Rubik One', sans-serif;
+    text-decoration: none;
+
+    background-color:$azul;
+
+}
+.button-detalles{ 
+    
+    padding: 5px 10px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: top;
+    font-family: 'Rubik One', sans-serif;
+    text-decoration: none;
+    font-size: 1vw;
+    transition: all .5s;
+    background-color:$azul;
+
 }
